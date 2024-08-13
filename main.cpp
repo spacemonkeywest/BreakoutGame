@@ -16,7 +16,8 @@ int main() {
 	ball.setOutlineColor(sf::Color::White);
 	ball.setPosition(295, 395);
 
-	float moveSpeed = 0.1f;
+	float moveSpeed = 0.125f;
+	sf::Vector2f velocity(0.075f, 0.075f);
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -40,6 +41,14 @@ int main() {
 				paddle.move(moveSpeed, 0);
 			}
 		}
+
+		if (ball.getPosition().y < 0 || ball.getGlobalBounds().intersects(paddle.getGlobalBounds())) {
+			velocity.y = -velocity.y;
+		} else if (ball.getPosition().x < 0 || ball.getPosition().x > 580) {
+			velocity.x = -velocity.x;
+		}
+
+		ball.move(velocity);
 
 		window.clear();
 		window.draw(paddle);
