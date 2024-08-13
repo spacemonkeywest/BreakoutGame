@@ -10,6 +10,12 @@ int main() {
 	paddle.setOutlineColor(sf::Color::White);
 	paddle.setPosition(260, 750);
 
+	sf::CircleShape ball;
+	ball.setRadius(10);
+	ball.setFillColor(sf::Color::White);
+	ball.setOutlineColor(sf::Color::White);
+	ball.setPosition(295, 395);
+
 	float moveSpeed = 0.1f;
 
 	while (window.isOpen()) {
@@ -37,6 +43,7 @@ int main() {
 
 		window.clear();
 		window.draw(paddle);
+		window.draw(ball);
 		window.display();
 	}
 
