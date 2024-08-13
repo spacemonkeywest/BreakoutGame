@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/carlosaldaco/Desktop/games/GameTwo/build",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX14.2.sdk -mmacosx-version-min=14.0 -o CMakeFiles/run.dir/main.cpp.o -c /Users/carlosaldaco/Desktop/games/GameTwo/main.cpp",
+  "file": "/Users/carlosaldaco/Desktop/games/GameTwo/main.cpp",
+  "output": "CMakeFiles/run.dir/main.cpp.o"
+}
+]

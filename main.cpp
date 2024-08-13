@@ -1,6 +1,36 @@
 #include<iostream>
 #include<SFML/Graphics.hpp>
 
+class Brick {
+	private:
+		int width;
+		int height;
+		int xPos;
+		int yPos;
+		bool broken = false;
+
+		sf::RectangleShape brick;
+	
+	public:
+		Brick(int w, int h, int x, int y) : width(w), height(h), xPos(x), yPos(y) {
+			brick.setPosition(xPos, yPos);
+			brick.setSize(sf::Vector2f(width, height));
+			brick.setFillColor(sf::Color::White);
+		}
+
+		bool isBroken() {
+			return broken;
+		}
+
+		void setBroken() {
+			broken = true;
+		}
+
+		sf::RectangleShape getShape() {
+			return brick;
+		}
+};
+
 int main() {
 	sf::RenderWindow window(sf::VideoMode(600, 800), "Breakout");
 
@@ -18,6 +48,13 @@ int main() {
 
 	float moveSpeed = 0.125f;
 	sf::Vector2f velocity(0.075f, 0.075f);
+
+	std::vector<Brick> bricks;
+	bricks.push_back(Brick(20, 20, 0, 0));
+	bricks.push_back(Brick(20, 20, 25, 0));
+	bricks.push_back(Brick(20, 20, 50, 0));
+	bricks.push_back(Brick(20, 20, 75, 0));
+
 
 	while (window.isOpen()) {
 		sf::Event event;
@@ -48,11 +85,23 @@ int main() {
 			velocity.x = -velocity.x;
 		}
 
+		for (auto& brick: bricks) {
+			if (ball.getGlobalBounds().intersects(brick.getShape().getGlobalBounds())) {
+				velocity.y = -velocity.y;
+				brick.setBroken();
+			}
+		}
+
 		ball.move(velocity);
 
 		window.clear();
 		window.draw(paddle);
 		window.draw(ball);
+		for (auto& brick: bricks) {
+			if (!brick.isBroken()) {
+				window.draw(brick.getShape());
+			}
+		}
 		window.display();
 	}
 
