@@ -1,0 +1,3 @@
+/Users/carlosaldaco/Desktop/games/GameTwo/build/CMakeFiles/run.dir
+/Users/carlosaldaco/Desktop/games/GameTwo/build/CMakeFiles/edit_cache.dir
+/Users/carlosaldaco/Desktop/games/GameTwo/build/CMakeFiles/rebuild_cache.dir
