@@ -58,10 +58,30 @@ class Game {
 		}
 
 		void initBricks() {
-			bricks.push_back(Brick(20, 20, 0, 0));
-			bricks.push_back(Brick(20, 20, 25, 0));
-			bricks.push_back(Brick(20, 20, 50, 0));
-			bricks.push_back(Brick(20, 20, 75, 0));
+			bricks.push_back(Brick(50, 50, 0, 0));
+			bricks.push_back(Brick(50, 50, 55, 0));
+			bricks.push_back(Brick(50, 50, 110, 0));
+			bricks.push_back(Brick(50, 50, 165, 0));
+			bricks.push_back(Brick(50, 50, 220, 0));
+			bricks.push_back(Brick(50, 50, 275, 0));
+			bricks.push_back(Brick(50, 50, 330, 0));
+			bricks.push_back(Brick(50, 50, 385, 0));
+			bricks.push_back(Brick(50, 50, 440, 0));
+			bricks.push_back(Brick(50, 50, 495, 0));
+			bricks.push_back(Brick(50, 50, 550, 0));
+
+			bricks.push_back(Brick(50, 50, 0, 55));
+			bricks.push_back(Brick(50, 50, 55, 55));
+			bricks.push_back(Brick(50, 50, 110, 55));
+			bricks.push_back(Brick(50, 50, 165, 55));
+			bricks.push_back(Brick(50, 50, 220, 55));
+			bricks.push_back(Brick(50, 50, 275, 55));
+			bricks.push_back(Brick(50, 50, 330, 55));
+			bricks.push_back(Brick(50, 50, 385, 55));
+			bricks.push_back(Brick(50, 50, 440, 55));
+			bricks.push_back(Brick(50, 50, 495, 55));
+			bricks.push_back(Brick(50, 50, 550, 55));
+
 		}
 
 		void processEvents() {
